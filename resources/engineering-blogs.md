@@ -19,3 +19,7 @@ A curated list of engineering blogs used as primary learning resources throughou
 - [Pinterest Engineering](https://medium.com/@Pinterest_Engineering)
 - [DoorDash Engineering](https://doordash.engineering/)
 - [Slack Engineering](https://slack.engineering/)
+- [Shopify Engineering](https://shopify.engineering/)
+- [GitHub Engineering](https://github.blog/category/engineering/)
+- [OpenAI Engineering](https://openai.com/research/)
+- [NVIDIA Developer Blog](https://developer.nvidia.com/blog/)

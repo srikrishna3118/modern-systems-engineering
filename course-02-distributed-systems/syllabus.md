@@ -1,20 +1,52 @@
-# Course 02 – Distributed Systems
+# Course 02: Distributed Systems Architecture
 
-## Overview
-This course explores the principles and patterns behind distributed systems, drawing from real-world engineering blog posts and case studies.
+Duration: 5 weeks
 
 ## Topics
-- CAP theorem and consistency models
-- Distributed consensus (Raft, Paxos)
-- Service discovery and load balancing
-- Distributed caching strategies
-- Fault tolerance and circuit breakers
-- Data partitioning and replication
 
-## Learning Objectives
-- Understand the trade-offs involved in distributed system design.
-- Implement patterns for fault-tolerant, scalable services.
-- Analyze real-world distributed systems from engineering blogs.
+- Service discovery
+- RPC and gRPC
+- Event driven architecture
+- Data sharding
+- Fault tolerance
+- Multi-region systems
+
+---
+
+# Weekly Plan
+
+Week 1:
+Distributed systems fundamentals
+
+Week 2:
+Event driven systems
+
+Week 3:
+Data partitioning
+
+Week 4:
+Fault tolerance
+
+Week 5:
+Global infrastructure
+
+---
+
+# Labs
+
+Lab 1
+Build a gRPC microservice architecture.
+
+Lab 2
+Create a Kafka event streaming pipeline.
+
+Lab 3
+Implement consistent hashing.
+
+Lab 4
+Create resilient API gateway.
+
+---
 
 ## Resources
 - See `lectures/` for lecture notes.
