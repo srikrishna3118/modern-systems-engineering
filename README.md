@@ -20,7 +20,7 @@ The program focuses on:
 • Realtime systems  
 • Payments infrastructure  
 
-Duration: 4–6 months  
+Duration: 6–8 months  
 Format: Self-study + hands-on labs + capstone project
 
 ---
