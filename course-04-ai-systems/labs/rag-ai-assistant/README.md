@@ -10,8 +10,6 @@ Documents --> Embedding Model --> Vector Store
 User Query --> Embedding Model --> Vector Store (similarity search) --> LLM --> Response
 ```
 
-See `architecture.png` for a detailed component diagram.
-
 ## Learning Objectives
 - Ingest and chunk documents into a vector database.
 - Generate and query vector embeddings for semantic search.
@@ -19,28 +17,35 @@ See `architecture.png` for a detailed component diagram.
 
 ## Prerequisites
 - Python 3.10+.
-- An OpenAI API key (or compatible local model).
-- Docker installed locally.
+- No API key required for the default local retrieval mode.
 
 ## Getting Started
 
-1. Install dependencies from `starter-code/requirements.txt`:
+1. Install dependencies:
    ```bash
-   pip install -r starter-code/requirements.txt
+   cd starter-code
+   python -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
    ```
-2. Set your API key:
+2. Ingest sample documents:
    ```bash
-   export OPENAI_API_KEY=<your-key>
+   python ingest.py --docs data/sample_docs --out data/index.pkl
    ```
-3. Ingest sample documents:
+3. Ask a question:
    ```bash
-   python ingest.py --docs data/sample_docs/
+   python assistant.py --index data/index.pkl --question "What is RAG and why use it?"
    ```
-4. Run the assistant:
-   ```bash
-   python assistant.py
-   ```
-5. Ask a question and verify the response is grounded in the ingested documents.
+
+## Validation
+
+- You should see the retrieved passages printed with source citations.
+- The final answer should reference only retrieved text (no hallucinated facts).
+
+## Experiment
+
+1. Change chunk size and overlap (in `rag/chunking.py`) and compare retrieval quality.
+2. Change `--top-k` in `assistant.py` and observe precision vs recall.
 
 ## Deliverables
 - A working RAG pipeline that answers questions based on custom documents.
@@ -48,3 +53,5 @@ See `architecture.png` for a detailed component diagram.
 
 ## Solution
 See the `solution/` directory for a reference implementation.
+
+

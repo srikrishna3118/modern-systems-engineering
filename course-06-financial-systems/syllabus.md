@@ -17,5 +17,5 @@ This course examines the design of high-reliability, compliance-driven financial
 - Build fraud detection pipelines using real-time data.
 
 ## Resources
-- See `labs/` for hands-on exercises.
-- See `case-studies/` for real-world examples.
+- Labs: `labs/`
+- Canonical case studies: `../case-studies/` (course-local `case-studies/` contains wrappers)

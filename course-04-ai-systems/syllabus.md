@@ -17,5 +17,5 @@ This course covers the design and operation of AI and machine learning systems, 
 - Apply MLOps practices to maintain model quality over time.
 
 ## Resources
-- See `labs/` for hands-on exercises.
-- See `case-studies/` for real-world examples.
+- Labs: `labs/`
+- Canonical case studies: `../case-studies/` (course-local `case-studies/` contains wrappers)

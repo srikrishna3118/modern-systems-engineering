@@ -1,4 +1,4 @@
-# Course 05 – Realtime Systems
+# Course 05 – Real-Time Systems
 
 ## Overview
 This course focuses on event-driven architectures, stream processing, and low-latency system design used in modern real-time applications.
@@ -17,5 +17,5 @@ This course focuses on event-driven architectures, stream processing, and low-la
 - Handle backpressure and flow control in high-throughput systems.
 
 ## Resources
-- See `labs/` for hands-on exercises.
-- See `case-studies/` for real-world examples.
+- Labs: `labs/`
+- Canonical case studies: `../case-studies/` (course-local `case-studies/` contains wrappers)

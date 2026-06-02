@@ -6,10 +6,9 @@ The capstone project is the culminating experience of the Modern Systems Enginee
 ## Choose One System to Build
 
 1. AI Knowledge Platform
-2. Uber Dispatch System
-3. Global Chat Platform
-4. Payment Processing Platform
-5. AI Coding Assistant
+2. Global Chat Platform
+3. Payment Processing Platform
+4. Feed Ranking System
 
 ## Deliverables
 
@@ -29,5 +28,5 @@ The capstone project is the culminating experience of the Modern Systems Enginee
 7. **Deployment**: Outline an infrastructure-as-code deployment plan.
 
 ## Resources
-- See `architecture-templates/` for diagram templates and scaffolding.
+- See `templates/` for architecture templates and scaffolding.
 - See `example-projects/` for completed project examples.

@@ -1,4 +1,4 @@
-# Course 02: Distributed Systems Architecture
+# Course 02: Distributed Systems
 
 Duration: 5 weeks
 
@@ -34,21 +34,13 @@ Global infrastructure
 
 # Labs
 
-Lab 1
-Build a gRPC microservice architecture.
-
-Lab 2
-Create a Kafka event streaming pipeline.
-
-Lab 3
-Implement consistent hashing.
-
-Lab 4
-Create resilient API gateway.
+- [Lab 1: Chat System (gRPC)](labs/chat-system) — Build a scalable chat server with bidirectional streaming
+- [Lab 2: Kafka Pipeline](labs/kafka-pipeline) — Event ingestion, partitioning, and real-time analytics
 
 ---
 
 ## Resources
-- See `lectures/` for lecture notes.
-- See `labs/` for hands-on exercises.
-- See `case-studies/` for real-world examples.
+- Lecture notes: `lectures/` (where provided)
+- Labs: `labs/`
+- Canonical case studies: `../case-studies/` (course-local `case-studies/` contains wrappers)
+

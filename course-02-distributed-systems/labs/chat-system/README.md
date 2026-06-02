@@ -10,8 +10,6 @@ Client --> API Gateway --> Chat Service --> Message Service
                                        --> User Service
 ```
 
-See `architecture.png` for a detailed component diagram.
-
 ## Learning Objectives
 - Define gRPC service contracts using Protocol Buffers.
 - Implement bidirectional streaming for real-time messaging.
@@ -24,17 +22,30 @@ See `architecture.png` for a detailed component diagram.
 
 ## Getting Started
 
-1. Clone or copy the `starter-code/` directory.
-2. Review the `proto/chat.proto` file to understand the service definition.
-3. Implement the missing server and client handlers as guided by the inline `TODO` comments.
+1. Move into the starter implementation:
+   ```bash
+   cd starter-code
+   ```
+2. Review the service contract in `proto/chat.proto`.
+3. Implement missing handlers marked with `TODO` in `server.py` / `client.py`.
 4. Run the services using Docker Compose:
    ```bash
-   docker-compose up --build
+   docker compose up --build
    ```
-5. Send a test message:
+5. Validate the service is responding:
    ```bash
    grpcurl -plaintext localhost:50051 chat.ChatService/SendMessage
    ```
+
+## Validation
+
+- Run `python client.py` and confirm messages are delivered.
+- Restart the stack and confirm it still boots cleanly.
+
+## Experiment
+
+1. Add a second consumer/service and route by chat room.
+2. Increase concurrency (multiple clients) and observe head-of-line blocking in streams.
 
 ## Deliverables
 - Working gRPC chat service with at least two connected microservices.

@@ -17,5 +17,5 @@ This course explores large-scale system design patterns, trade-offs, and decisio
 - Communicate design decisions effectively.
 
 ## Resources
-- See `case-studies/` for real-world examples.
-- See `exercises/` for practice problems.
+- Canonical case studies: `../case-studies/` (course-local `case-studies/` contains wrappers)
+- Exercises: `exercises/`

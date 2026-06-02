@@ -11,7 +11,6 @@ API Client --> Payment API --> Ledger Service --> PostgreSQL (double-entry ledge
                                               --> Notification Service
 ```
 
-See `architecture.png` for a detailed component diagram.
 
 ## Learning Objectives
 - Implement double-entry bookkeeping for financial transactions.
@@ -19,31 +18,50 @@ See `architecture.png` for a detailed component diagram.
 - Build an audit trail that satisfies compliance requirements.
 
 ## Prerequisites
-- Python or Node.js.
-- Docker and Docker Compose installed locally.
+- Python 3.10+
 - Basic understanding of SQL and database transactions.
 
 ## Getting Started
 
-1. Start the database:
+1. Install dependencies:
    ```bash
-   docker-compose up -d postgres
+   cd starter-code
+   python -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
    ```
-2. Run database migrations:
+2. Initialize the database:
    ```bash
-   python manage.py migrate
+   python init_db.py --db ledger.db
    ```
-3. Review the starter code in `starter-code/` and implement the `TODO` sections in `ledger.py`.
-4. Start the API server:
+3. Start the API server:
    ```bash
-   python app.py
+   uvicorn app:app --reload --port 8000
    ```
-5. Create a test transaction:
+4. Create a test transaction:
    ```bash
    curl -X POST http://localhost:8000/transactions \
      -H "Idempotency-Key: test-001" \
      -d '{"from": "account_a", "to": "account_b", "amount": 100}'
    ```
+
+## Validation
+
+```bash
+# Replay the same request; the response should be identical and no duplicate entries created.
+curl -s -X POST http://localhost:8000/transactions \
+  -H "Idempotency-Key: test-001" \
+  -H 'Content-Type: application/json' \
+  -d '{"from": "account_a", "to": "account_b", "amount": 100}' | jq
+
+# Check balances; they should sum to 0 across both accounts.
+curl -s http://localhost:8000/accounts/account_a/balance | jq
+curl -s http://localhost:8000/accounts/account_b/balance | jq
+```
+
+## Experiment
+
+Send the same transaction concurrently (e.g. two terminals) with the same idempotency key and confirm the ledger stays consistent.
 
 ## Deliverables
 - A working ledger API that correctly debits and credits accounts.
@@ -52,3 +70,4 @@ See `architecture.png` for a detailed component diagram.
 
 ## Solution
 See the `solution/` directory for a reference implementation.
+

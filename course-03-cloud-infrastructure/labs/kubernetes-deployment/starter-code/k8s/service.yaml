@@ -1,0 +1,22 @@
+# TODO: Create a Kubernetes Service to expose the Deployment
+#
+# Requirements:
+# 1. type: ClusterIP (default, internal access)
+# 2. selector: app=my-app (match Deployment labels)
+# 3. port: 8000, targetPort: 8000
+#
+# Template structure:
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: my-app-service
+#   labels:
+#     app: my-app
+# spec:
+#   type: ClusterIP
+#   selector:
+#     app: my-app
+#   ports:
+#   - port: 8000
+#     targetPort: 8000
+#     protocol: TCP

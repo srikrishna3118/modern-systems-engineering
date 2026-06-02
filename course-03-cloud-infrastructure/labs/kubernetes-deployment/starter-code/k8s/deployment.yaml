@@ -1,0 +1,37 @@
+# TODO: Create a Kubernetes Deployment for the weather service
+#
+# Requirements:
+# 1. replicas: 3
+# 2. image: my-app:1.0 (you'll build this locally)
+# 3. Set APP_VERSION and ENVIRONMENT env vars
+# 4. Container port: 8000
+# 5. Add livenessProbe (HTTP GET /health every 10s, initial delay 5s)
+# 6. Add readinessProbe (HTTP GET /ready every 5s, initial delay 3s)
+# 7. Set resource requests/limits (CPU: 100m/200m, Memory: 64Mi/128Mi)
+#
+# Template structure:
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: my-app
+#   labels:
+#     app: my-app
+# spec:
+#   replicas: 3
+#   selector:
+#     matchLabels:
+#       app: my-app
+#   template:
+#     metadata:
+#       labels:
+#         app: my-app
+#     spec:
+#       containers:
+#       - name: my-app
+#         image: my-app:1.0
+#         ports:
+#         - containerPort: 8000
+#         env:
+#         - name: APP_VERSION
+#           value: "1.0"
+#         # TODO: Add livenessProbe, readinessProbe, and resources

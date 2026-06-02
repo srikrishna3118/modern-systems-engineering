@@ -17,6 +17,6 @@ This course covers the core principles of software and systems engineering, prov
 - Build and document APIs following industry standards.
 
 ## Resources
-- See `lectures/` for lecture notes.
-- See `labs/` for hands-on exercises.
-- See `case-studies/` for real-world examples.
+- Lecture notes: `lectures/`
+- Labs: `labs/`
+- Canonical case studies: `../case-studies/` (course-local `case-studies/` contains wrappers)

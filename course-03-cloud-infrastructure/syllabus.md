@@ -17,5 +17,5 @@ This course covers cloud platforms, infrastructure-as-code, and modern operation
 - Design secure and cost-effective cloud architectures.
 
 ## Resources
-- See `labs/` for hands-on exercises.
-- See `case-studies/` for real-world examples.
+- Labs: `labs/`
+- Canonical case studies: `../case-studies/` (course-local `case-studies/` contains wrappers)
