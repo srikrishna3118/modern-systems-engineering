@@ -31,6 +31,11 @@ Slack powers billions of messages daily across 750K+ organizations. Its message 
 4. **Durability is infrastructure, not application logic** — Durable message queues must be built into the platform layer
 5. **Consumer groups enable independent scaling** — Different consumers (notifications, indexing) scale independently
 
+## Where this fits in the curriculum
+
+- [Course 07, Exercise 2: Notifications](../course-07-advanced-system-design/exercises/02-notification-system.md) — isolating interactive work from backlog.
+- Course pointer: [course 07 wrapper](../course-07-advanced-system-design/case-studies/slack-message-queue.md).
+
 ## Further Reading
 
 - [Slack's Message Queue Architecture (Slack Engineering Blog)](https://slack.engineering/)

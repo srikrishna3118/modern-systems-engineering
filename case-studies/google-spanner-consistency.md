@@ -31,6 +31,10 @@ Google Spanner is a globally distributed relational database that provides stron
 3. **Two-phase commit is feasible at scale** — Spanner proves 2PC works globally if latency requirements are realistic (10s of ms)
 4. **Consistency is not the bottleneck; availability is** — Modern globally distributed systems should default to strong consistency when it doesn't compromise availability
 
+## Where this fits in the curriculum
+
+- [Course 07, Lecture 2](../course-07-advanced-system-design/lectures/lecture-02-global-multi-region.md) and [Lecture 3](../course-07-advanced-system-design/lectures/lecture-03-database-selection.md) — what global external consistency costs.
+
 ## Further Reading
 
 - [Spanner: Google's Globally-Distributed Database (OSDI 2012)](https://research.google/publications/spanner-googles-globally-distributed-database/)

@@ -31,6 +31,12 @@ Netflix delivers billions of hours of video per month to 250+ million subscriber
 3. **Observability at the edge** — Client-side metrics reveal more about quality than server-side metrics alone
 4. **Chaos engineering for streaming** — Netflix intentionally breaks systems to improve fault tolerance
 
+## Where this fits in the curriculum
+
+- [Course 07, Exercise 5: Video streaming](../course-07-advanced-system-design/exercises/05-video-streaming.md).
+- [Course 02 roadmap](../curriculum-roadmap.md) also assigns this study for CDN and personalization context.
+- Course pointer: [course 07 wrapper](../course-07-advanced-system-design/case-studies/netflix-streaming-architecture.md).
+
 ## Further Reading
 
 - [Netflix Technology Blog](https://netflixtechblog.com/)

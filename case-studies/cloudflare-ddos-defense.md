@@ -32,6 +32,12 @@ Cloudflare mitigates some of the largest DDoS attacks ever recorded (>2 Tbps) ac
 4. **Layered defenses are necessary** — L3/L4 filtering (volumetric) + L7 challenge/block (sophistication); single layer insufficient
 5. **Sampling and aggregation reduce signal** — Processing billions of packets requires sampling; aggregated metrics still provide attack visibility
 
+## Where this fits in the curriculum
+
+- [Course 07, Lecture 4: Rate limiting](../course-07-advanced-system-design/lectures/lecture-04-rate-limiting.md) and [Lecture 5: Security](../course-07-advanced-system-design/lectures/lecture-05-security-zero-trust.md) — the edge layer under application limits.
+- [Course 07, Exercise 3: Rate limiter](../course-07-advanced-system-design/exercises/03-rate-limiter.md) — what this system deliberately does *not* do (per-token API quotas).
+- Course pointer: [course 07 wrapper](../course-07-advanced-system-design/case-studies/cloudflare-ddos-defense.md).
+
 ## Further Reading
 
 - [Cloudflare DDoS Protection](https://www.cloudflare.com/ddos/)

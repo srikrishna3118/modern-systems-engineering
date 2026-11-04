@@ -2,6 +2,8 @@
 
 ## Overview
 
+The course-assigned write-up is [Stripe Payment System](stripe-payment-system.md). This note is the shorter companion and covers the same system.
+
 Stripe processes hundreds of billions of dollars in payments annually for millions of businesses. Its payment infrastructure must ensure idempotency, consistency (money never created/destroyed), PCI-DSS compliance, and 99.99%+ reliability.
 
 ## Key Challenges

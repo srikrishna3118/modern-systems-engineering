@@ -45,6 +45,10 @@ WhatsApp delivers billions of messages per day to 2+ billion users with an archi
 4. **Protocol design matters** — Custom binary protocol is far more efficient than JSON for bandwidth-constrained mobile
 5. **Push notifications solve the offline problem** — Avoiding persistent reconnections for offline users saves massive bandwidth
 
+## Where this fits in the curriculum
+
+- [Course 07, Exercise 2](../course-07-advanced-system-design/exercises/02-notification-system.md) — a design where the connection, not the notification, is the product.
+
 ## Further Reading
 
 - [WhatsApp Engineering](https://www.whatsapp.com/research/)

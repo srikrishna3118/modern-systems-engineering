@@ -31,6 +31,10 @@ Airbnb's search platform powers billions of searches daily, ranking millions of 
 3. **Experimentation infrastructure is as important as ranking logic** — Safely testing ranking changes requires rigorous A/B testing
 4. **Marketplace dynamics are feedback loops** — Ranking affects supply/demand, which affects optimal ranking strategy
 
+## Where this fits in the curriculum
+
+- [Course 07, Exercise 4: Full-text search](../course-07-advanced-system-design/exercises/04-full-text-search.md) — ranking beyond BM25 once features exist.
+
 ## Further Reading
 
 - [Airbnb Engineering & Data Science Blog](https://medium.com/airbnb-engineering)

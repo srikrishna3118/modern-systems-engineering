@@ -49,6 +49,12 @@ Apache Kafka, developed at LinkedIn, has become the de facto standard for event 
 3. **Replication latency matters** — In-Sync Replica (ISR) design ensures durability without waiting for slow replicas
 4. **The log abstraction is remarkably versatile** — Log-based architectures power transactions, snapshots, and stream processing
 
+## Where this fits in the curriculum
+
+- [Course 07, Exercise 2: Notifications](../course-07-advanced-system-design/exercises/02-notification-system.md) — the log between accept and channel workers.
+- [Course 02 Kafka lab](../course-02-distributed-systems/labs/kafka-pipeline).
+- Course pointer: [course 07 wrapper](../course-07-advanced-system-design/case-studies/kafka-event-streaming.md).
+
 ## Further Reading
 
 - [The Design of Kafka](https://docs.confluent.io/kafka/design/index.html)

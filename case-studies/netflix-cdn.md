@@ -35,6 +35,11 @@ Netflix uses DASH (Dynamic Adaptive Streaming over HTTP) to serve multiple bitra
 3. Operational visibility into thousands of globally distributed nodes requires a purpose-built monitoring platform.
 4. Partnering with ISPs (by placing hardware in their networks) creates win-win outcomes on network costs.
 
+## Where this fits in the curriculum
+
+- [Course 07, Lecture 2: Multi-region](../course-07-advanced-system-design/lectures/lecture-02-global-multi-region.md) — putting cacheable bytes inside the ISP.
+- Course pointer: [course 07 wrapper](../course-07-advanced-system-design/case-studies/netflix-cdn.md). The [course 02 wrapper](../course-02-distributed-systems/case-studies/netflix-cdn.md) points here too.
+
 ## Further Reading
 - [Netflix Tech Blog – How Netflix Works: The Highly Simplified Complex Stuff](https://netflixtechblog.com/how-netflix-works-the-highly-simplified-complex-stuff-that-happens-every-time-you-hit-play-3a40c9be254b)
 - [Netflix Tech Blog – Open Connect Overview](https://openconnect.netflix.com/en/)
