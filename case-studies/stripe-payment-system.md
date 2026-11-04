@@ -38,6 +38,13 @@ Stripe uses exponential backoff with jitter for internal service retries. Financ
 3. Minimizing the PCI scope through tokenization dramatically simplifies compliance across the rest of the system.
 4. Reconciliation jobs are essential: assume any distributed operation can fail partway through.
 
+## Where this fits in the curriculum
+
+- [Course 07, Lecture 3](../course-07-advanced-system-design/lectures/lecture-03-database-selection.md) and [Lecture 5](../course-07-advanced-system-design/lectures/lecture-05-security-zero-trust.md).
+- [Course 06 ledger lab](../course-06-financial-systems/labs/payment-ledger).
+- A shorter companion note lives in [stripe-payment-processing.md](stripe-payment-processing.md). This file is the one Course 06 and Course 07 assign.
+- Course pointer: [course 07 wrapper](../course-07-advanced-system-design/case-studies/stripe-payment-system.md).
+
 ## Further Reading
 - [Stripe Engineering Blog – Idempotency](https://stripe.com/blog/idempotency)
 - [Stripe Engineering Blog – Online Migrations at Scale](https://stripe.com/blog/online-migrations)

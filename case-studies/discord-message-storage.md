@@ -113,6 +113,10 @@ messages (
 
 5. **Time-bucketed partitions prevent unbounded growth** — Without time buckets, a channel with years of history would create a single massive partition. Bucketing ensures predictable partition sizes.
 
+## Where this fits in the curriculum
+
+- [Course 07, Lecture 3](../course-07-advanced-system-design/lectures/lecture-03-database-selection.md) — unbounded documents and the partition key.
+
 ## Further Reading
 
 - [How Discord Stores Trillions of Messages](https://discord.com/blog/how-discord-stores-trillions-of-messages)

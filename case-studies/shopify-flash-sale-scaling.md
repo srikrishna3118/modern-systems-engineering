@@ -33,6 +33,12 @@ During flash sales and major shopping events (Cyber Monday, Black Friday, season
 4. **Pre-warming is essential** — Spinning up capacity during a spike is too slow; warm up in advance while traffic is still manageable
 5. **Bot traffic is real and non-trivial** — During major sales, 50%+ of traffic is often bots; fingerprinting and rate limiting are necessary
 
+## Where this fits in the curriculum
+
+- [Course 07, Lecture 1: Designing for scale](../course-07-advanced-system-design/lectures/lecture-01-designing-for-scale.md) — split browse from checkout, pre-warm, then shard.
+- [Course 07, Exercise 5](../course-07-advanced-system-design/exercises/05-video-streaming.md) — the same pre-warm move, applied to a hot video instead of a hot SKU.
+- Course pointer: [course 07 wrapper](../course-07-advanced-system-design/case-studies/shopify-flash-sale-scaling.md).
+
 ## Further Reading
 
 - [Shopify Engineering: Scaling Black Friday](https://shopify.engineering/)

@@ -45,6 +45,12 @@ YouTube serves billions of hours of video per month to 2+ billion users, making 
 3. **Recommendation is a learned problem** — Simple algorithms (collaborative filtering) give way to neural networks at scale
 4. **Separation of concerns** — Upload/encode/serve are distinct systems; failures in one don't affect others
 
+## Where this fits in the curriculum
+
+- [Course 07, Exercise 5: Video streaming](../course-07-advanced-system-design/exercises/05-video-streaming.md) — the worked design this case study is the production counterpart of.
+- [Course 07, Lecture 2](../course-07-advanced-system-design/lectures/lecture-02-global-multi-region.md) — bytes at the edge, metadata at home.
+- Course pointer: [course 07 wrapper](../course-07-advanced-system-design/case-studies/youtube-video-delivery.md).
+
 ## Further Reading
 
 - [YouTube Scalability Talk](https://www.youtube.com/watch?v=jZkHpNj9KZ8)

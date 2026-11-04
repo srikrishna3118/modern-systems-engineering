@@ -47,6 +47,11 @@ AWS scales to serve billions of requests globally while maintaining the highest 
 3. **Cell design decouples deployment from coordination** — Teams can deploy and scale independently within their cell
 4. **Multi-cell resilience is better than RAID-like resilience** — Spread load across many independent cells, not replication
 
+## Where this fits in the curriculum
+
+- [Course 07, Lecture 2](../course-07-advanced-system-design/lectures/lecture-02-global-multi-region.md) — cells as a blast-radius limit.
+- Also assigned in Course 01 and Course 03 on the roadmap.
+
 ## Further Reading
 
 - [Amazon's Approach to Highly Resilient Technology Platforms](https://www.amazon.com/gp/customer-reviews/review/)
