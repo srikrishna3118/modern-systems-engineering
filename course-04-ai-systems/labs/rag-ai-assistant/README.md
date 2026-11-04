@@ -52,6 +52,14 @@ User Query --> Embedding Model --> Vector Store (similarity search) --> LLM --> 
 - A brief analysis comparing retrieval-augmented responses to vanilla LLM responses.
 
 ## Solution
-See the `solution/` directory for a reference implementation.
+
+```bash
+cd solution
+pip install -r requirements.txt
+python ingest.py --docs data/sample_docs --out data/index.pkl
+python assistant.py --index data/index.pkl --question "What is RAG and why use it?"
+```
+
+The reference answer is extractive: it prints retrieved chunks and a short citation, and it does not call an external model. Swap in an LLM only after the retrieved context is the thing you want the model to see.
 
 

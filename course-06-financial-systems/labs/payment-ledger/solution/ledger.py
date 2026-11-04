@@ -96,6 +96,22 @@ def create_transfer(
         raise
 
 
+def list_audit(conn: sqlite3.Connection, limit: int = 50) -> list[dict]:
+    rows = conn.execute(
+        "SELECT audit_id, tx_id, event, created_at FROM audit_log ORDER BY audit_id DESC LIMIT ?",
+        (limit,),
+    ).fetchall()
+    return [
+        {
+            "audit_id": row["audit_id"],
+            "tx_id": row["tx_id"],
+            "event": row["event"],
+            "created_at": row["created_at"],
+        }
+        for row in rows
+    ]
+
+
 def get_balance(conn: sqlite3.Connection, account: str) -> int:
     row = conn.execute(
         "SELECT COALESCE(SUM(delta), 0) AS bal FROM entries WHERE account = ?",

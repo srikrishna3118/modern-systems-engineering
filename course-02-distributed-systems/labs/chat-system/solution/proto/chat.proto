@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package chat;
+
+option go_package = "github.com/modern-systems-engineering/chat-system/proto";
+
+// Chat service definition
+service ChatService {
+  // Send a single message
+  rpc SendMessage(ChatMessage) returns (SendResponse);
+
+  // Bidirectional streaming for real-time chat
+  rpc ChatStream(stream ChatMessage) returns (stream ChatMessage);
+
+  // Get message history for a room
+  rpc GetHistory(HistoryRequest) returns (HistoryResponse);
+}
+
+// User service for managing connected users
+service UserService {
+  // Register a user connection
+  rpc Connect(ConnectRequest) returns (ConnectResponse);
+
+  // Disconnect a user
+  rpc Disconnect(DisconnectRequest) returns (DisconnectResponse);
+
+  // List users in a room
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
+}
+
+message ChatMessage {
+  string id = 1;
+  string room_id = 2;
+  string sender_id = 3;
+  string sender_name = 4;
+  string content = 5;
+  int64 timestamp = 6;
+}
+
+message SendResponse {
+  bool success = 1;
+  string message_id = 2;
+}
+
+message HistoryRequest {
+  string room_id = 1;
+  int32 limit = 2;
+  int64 before_timestamp = 3;
+}
+
+message HistoryResponse {
+  repeated ChatMessage messages = 1;
+}
+
+message ConnectRequest {
+  string user_id = 1;
+  string user_name = 2;
+  string room_id = 3;
+}
+
+message ConnectResponse {
+  bool success = 1;
+  string session_id = 2;
+}
+
+message DisconnectRequest {
+  string session_id = 1;
+}
+
+message DisconnectResponse {
+  bool success = 1;
+}
+
+message ListUsersRequest {
+  string room_id = 1;
+}
+
+message ListUsersResponse {
+  repeated User users = 1;
+}
+
+message User {
+  string user_id = 1;
+  string user_name = 2;
+  bool online = 3;
+}

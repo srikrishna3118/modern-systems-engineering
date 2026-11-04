@@ -42,4 +42,15 @@ Build a real-time data streaming pipeline using WebSockets. Covers event-driven 
 - Write-up on latency vs. throughput trade-offs
 
 ## Solution
-See the `solution/` directory for a reference implementation.
+
+```bash
+cd solution
+pip install -r requirements.txt
+python smoke_client.py          # two subscribers, plus a slow-client drop check
+python server.py                # ws://localhost:8765
+# then open client.html
+```
+
+`docker compose up` in `solution/` runs the same server with `BIND_HOST=0.0.0.0`.
+
+Each client has a bounded outbound queue. A full queue drops that client's update and leaves every other subscriber moving. The queue length is the backpressure limit (`max_backlog`).

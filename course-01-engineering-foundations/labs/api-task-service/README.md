@@ -50,4 +50,11 @@ Change the pagination strategy.
 2. Create 10,000 tasks and compare latency for deep pages (e.g. offset 9000) vs cursor.
 
 ## Solution
-See `../solution/` for a reference implementation with cursor pagination.
+
+```bash
+cd ../solution
+pip install -r requirements.txt
+uvicorn app.main:app --port 8001
+```
+
+The reference list endpoint uses cursor pagination (`next_cursor`), which is the experiment the starter asks you to try. Create and list commands are the same as above, against port 8001.

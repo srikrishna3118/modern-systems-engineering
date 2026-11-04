@@ -8,6 +8,7 @@ Complete implementation of the gRPC chat server with:
 - Message history retrieval
 """
 
+import os
 import time
 import uuid
 import logging
@@ -213,4 +214,4 @@ def serve(port: int = 50051):
 
 
 if __name__ == "__main__":
-    serve()
+    serve(port=int(os.environ.get("PORT", "50051")))

@@ -50,4 +50,25 @@ curl -s http://localhost:8000/ | head
 2. Break readinessProbe intentionally and observe traffic drop while pods stay running.
 
 ## Solution
-See the `solution/` directory for reference manifests.
+
+`solution/` contains the app, the image build, and the manifests.
+
+Local, without a cluster:
+
+```bash
+cd solution
+pip install -r requirements.txt
+python smoke_test.py
+# or: docker compose up --build
+# curl -s http://localhost:8000/health
+```
+
+On a cluster (kind or minikube), load the image the cluster can see, then:
+
+```bash
+kubectl apply -f solution/k8s/
+kubectl port-forward svc/my-app-service 8000:8000
+curl -s http://localhost:8000/health
+```
+
+The Deployment requests 3 replicas, sets a liveness probe on `/health` and a readiness probe on `/ready`, and caps CPU and memory. `targetPort: http` matches the named port on the container.

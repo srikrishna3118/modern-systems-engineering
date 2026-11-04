@@ -1,0 +1,11 @@
+services:
+  stream:
+    image: python:3.11-slim
+    working_dir: /app
+    volumes:
+      - .:/app
+    environment:
+      BIND_HOST: 0.0.0.0
+    command: sh -c "pip install -r requirements.txt && python server.py"
+    ports:
+      - "8765:8765"

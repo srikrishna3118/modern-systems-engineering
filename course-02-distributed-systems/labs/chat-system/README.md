@@ -52,4 +52,16 @@ Client --> API Gateway --> Chat Service --> Message Service
 - A brief write-up explaining your service discovery approach.
 
 ## Solution
-See the `solution/` directory for a reference implementation.
+
+`solution/` implements `ChatService` and `UserService` from `proto/chat.proto` in one process (two gRPC services, one server). Generate the stubs, then run the smoke test:
+
+```bash
+cd solution
+pip install -r requirements.txt
+python -m grpc_tools.protoc -I proto --python_out=. --grpc_python_out=. proto/chat.proto
+python smoke_test.py
+python server.py
+python client.py --user ada --room general
+```
+
+`docker compose up --build` in `solution/` generates the stubs in the image and serves on port 50051.
