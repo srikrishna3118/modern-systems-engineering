@@ -18,8 +18,10 @@ Learn the bedrock principles of software systems engineering—how professional 
 * **Related Case Studies**:
   * [AWS Cell Architecture](case-studies/aws-cell-architecture.md) — How AWS isolates systems for reliability
   * [Uber's Microservices Migration](case-studies/uber-microservices-migration.md) — Building systems that scale
-* **Labs**: 2 exercises on API design and system fundamentals
-* **Time**: Reading (6–8 hrs) + Labs (6–8 hrs) + Exercises (4–6 hrs)
+* **Labs**:
+  * [API Task Service](course-01-engineering-foundations/labs/api-task-service) — contracts, validation, pagination
+  * [Reliability Toolkit](course-01-engineering-foundations/labs/reliability-toolkit) — retries, backoff, circuit breaker
+* **Time**: Reading (6–8 hrs) + Labs (8–12 hrs)
 
 ---
 
@@ -31,6 +33,8 @@ Master the concepts and patterns required to build systems across multiple compu
 * **Syllabus**: [course-02-distributed-systems/syllabus.md](course-02-distributed-systems/syllabus.md)
 * **Lectures**:
   * [Distributed Fundamentals](course-02-distributed-systems/lectures/lecture-01-distributed-fundamentals.md) — CAP theorem, consensus (Raft), replication, fault tolerance, RPC patterns
+  * [Event-Driven Systems](course-02-distributed-systems/lectures/lecture-02-event-driven-systems.md) — commands vs events, the log, idempotent consumers
+  * [Partitioning and Fault Tolerance](course-02-distributed-systems/lectures/lecture-03-partitioning-and-fault-tolerance.md) — shard keys, timeouts, retries, fencing
 * **Case Studies**:
   * [Netflix Streaming Architecture](case-studies/netflix-streaming-architecture.md) — How Netflix delivers billions of hours of video
   * [Uber Dispatch System](case-studies/uber-dispatch-system.md) — Real-time supply/demand matching at global scale
@@ -50,14 +54,18 @@ Master the concepts and patterns required to build systems across multiple compu
 Learn to deploy and operate systems at scale using containers, orchestration platforms, and cloud services.
 
 * **Syllabus**: [course-03-cloud-infrastructure/syllabus.md](course-03-cloud-infrastructure/syllabus.md)
+* **Lectures**:
+  * [Cloud Foundations, Networking, and Security](course-03-cloud-infrastructure/lectures/lecture-01-cloud-networking-security.md)
+  * [IaC, Kubernetes, Serverless, and Cost](course-03-cloud-infrastructure/lectures/lecture-02-iac-kubernetes-serverless-finops.md)
 * **Case Studies**:
+  * [Kubernetes orchestration](case-studies/kubernetes-orchestration.md) — what the control plane is actually for
   * [AWS Cell Architecture](case-studies/aws-cell-architecture.md) — Distributed system isolation
-  * [Cloudflare DDoS Defense](case-studies/cloudflare-ddos-defense.md) — Global anycast network, eBPF filtering
+  * [AWS Aurora](case-studies/aws-aurora.md) — a managed database instead of state on the cluster
 * **Labs**:
   * [Kubernetes Deployment](course-03-cloud-infrastructure/labs/kubernetes-deployment) — Deploy containerized apps with health checks, resource limits, scaling
 * **Resources**:
   * [Architecture Diagrams Guide](architecture-diagrams-guide.md) — Reference patterns for containers, orchestration, monitoring
-* **Time**: Reading (6–8 hrs) + Labs (10–14 hrs) + Exercises (4–6 hrs)
+* **Time**: Reading (6–8 hrs) + Lab (10–14 hrs)
 
 ---
 
@@ -67,6 +75,9 @@ Learn to deploy and operate systems at scale using containers, orchestration pla
 Design systems for training, serving, and distributing machine learning models. Covers feature engineering, inference optimization, and production ML pipelines.
 
 * **Syllabus**: [course-04-ai-systems/syllabus.md](course-04-ai-systems/syllabus.md)
+* **Lectures**:
+  * [ML Systems, Data, and Training](course-04-ai-systems/lectures/lecture-01-ml-systems-data-training.md)
+  * [Serving, MLOps, and Monitoring](course-04-ai-systems/lectures/lecture-02-serving-mlops-monitoring.md)
 * **Case Studies**:
   * [NVIDIA AI Cluster Architecture](case-studies/nvidia-ai-cluster-architecture.md) — GPU fabric, all-reduce optimization, thermal management
   * [OpenAI Inference Infrastructure](case-studies/openai-inference-infrastructure.md) — Batching, PagedAttention, speculative decoding for LLM serving
@@ -83,6 +94,9 @@ Design systems for training, serving, and distributing machine learning models. 
 Build systems that process and respond to data in near real-time. Covers WebSockets, pub/sub patterns, streaming architectures, and collaboration features.
 
 * **Syllabus**: [course-05-realtime-systems/syllabus.md](course-05-realtime-systems/syllabus.md)
+* **Lectures**:
+  * [Events, Streams, and Windows](course-05-realtime-systems/lectures/lecture-01-events-streams-windows.md)
+  * [WebSockets, Latency, and Backpressure](course-05-realtime-systems/lectures/lecture-02-websockets-latency-backpressure.md)
 * **Case Studies**:
   * [Figma Real-Time Collaboration](case-studies/figma-realtime-collaboration.md) — Operational transformation, conflict resolution, real-time sync
   * [Discord Chat Infrastructure](case-studies/discord-chat-infrastructure.md) — Presence, typing indicators, message ordering at scale
@@ -99,6 +113,9 @@ Build systems that process and respond to data in near real-time. Covers WebSock
 Design systems for payments, ledgers, and financial transactions. Covers idempotency, consistency, compliance, and fraud detection.
 
 * **Syllabus**: [course-06-financial-systems/syllabus.md](course-06-financial-systems/syllabus.md)
+* **Lectures**:
+  * [Payments, Idempotency, and Availability](course-06-financial-systems/lectures/lecture-01-payments-idempotency-availability.md)
+  * [Compliance, Fraud, and the Audit Log](course-06-financial-systems/lectures/lecture-02-compliance-fraud-audit.md)
 * **Case Studies**:
   * [Stripe Payment Processing](case-studies/stripe-payment-processing.md) — Idempotency keys, ledger architecture, tokenization, compliance
 * **Labs**:
@@ -113,17 +130,18 @@ Design systems for payments, ledgers, and financial transactions. Covers idempot
 Apply knowledge across courses to solve complex large-scale system design problems. Prepare for system design interviews.
 
 * **Syllabus**: [course-07-advanced-system-design/syllabus.md](course-07-advanced-system-design/syllabus.md)
+* **Lectures**: one per syllabus topic, linked from the [syllabus](course-07-advanced-system-design/syllabus.md) (scale, multi-region, databases, rate limiting, zero trust, interview communication)
 * **Case Studies**:
   * [Cloudflare DDoS Defense](case-studies/cloudflare-ddos-defense.md) — Anycast, eBPF, layered filtering
-  * [GitHub Code Search](case-studies/github-code-search.md) — Spokes storage, diff caching, distributed indexing
+  * [GitHub Code Search](case-studies/github-code-search.md) — code-oriented index, blob dedup, query tier separate from ingestion
   * [Shopify Flash Sale Scaling](case-studies/shopify-flash-sale-scaling.md) — Pre-warming, optimistic locking, inventory sharding
 * **Exercises**:
-  * [System Design Exercises](course-07-advanced-system-design/exercises/system-design-exercises.md) — 5 problems:
-    1. URL Shortener — Distributed ID generation, caching, read-heavy design
-    2. Real-Time Notifications — Multi-channel delivery, ordering, reliability
-    3. Rate Limiter — Token bucket, sliding window, distributed state
-    4. Full-Text Search Engine — Inverted indices, ranking, distributed search
-    5. Video Streaming Platform — Transcoding, CDN distribution, quality selection
+  * [System Design Exercises](course-07-advanced-system-design/exercises/system-design-exercises.md) — 5 worked problems (requirements, estimates, mermaid diagram, trade-offs):
+    1. [URL Shortener](course-07-advanced-system-design/exercises/01-url-shortener.md) — id allocation, cache, read-heavy path
+    2. [Real-Time Notifications](course-07-advanced-system-design/exercises/02-notification-system.md) — priority isolation, idempotent delivery
+    3. [Rate Limiter](course-07-advanced-system-design/exercises/03-rate-limiter.md) — token bucket, one atomic check
+    4. [Full-Text Search](course-07-advanced-system-design/exercises/04-full-text-search.md) — derived index, tenant fan-out
+    5. [Video Streaming](course-07-advanced-system-design/exercises/05-video-streaming.md) — transcode offline, bytes from a CDN
 * **Resources**:
   * [Architecture Diagrams Guide](architecture-diagrams-guide.md) — 12 patterns for trade-off analysis
 * **Time**: Reading (6–8 hrs) + Exercises (12–16 hrs) + Practice (8–12 hrs)
@@ -169,7 +187,7 @@ Integrate and apply everything you've learned by building a complete production-
 
 ## 🗺️ All Case Studies
 
-20 production architectures covering every major system design challenge:
+The library is indexed in [case-studies/README.md](case-studies/README.md). Grouped:
 
 **Messaging & Communication** (4)
 * [WhatsApp Messaging System](case-studies/whatsapp-messaging-system.md) — Erlang, minimal infra, 100M concurrent users
@@ -181,7 +199,7 @@ Integrate and apply everything you've learned by building a complete production-
 * [Uber Dispatch System](case-studies/uber-dispatch-system.md) — H3 geohashing, supply/demand, event-driven dispatch
 * [Airbnb Search Platform](case-studies/airbnb-search-platform.md) — ML ranking, feature store, A/B testing
 * [Pinterest Feed Ranking](case-studies/pinterest-feed-ranking.md) — Two-stage ranking, graph learning, diversity
-* [GitHub Code Search](case-studies/github-code-search.md) — Spokes blobs, diff caching, distributed indexing
+* [GitHub Code Search](case-studies/github-code-search.md) — code-oriented index, identical blobs indexed once, rebuildable shards
 
 **Streaming & Media** (3)
 * [Netflix Streaming Architecture](case-studies/netflix-streaming-architecture.md) — Open Connect CDN, adaptive bitrate, personalization
@@ -246,7 +264,7 @@ Integrate and apply everything you've learned by building a complete production-
 ## 💡 How to Navigate This Curriculum
 
 * **Read the syllabus** first for each course to understand goals and prerequisites
-* **Watch lectures** (if available) and take notes on key concepts
+* **Read the lectures** linked from the course syllabus and take notes on key concepts
 * **Study case studies** to see how real companies solve problems
 * **Complete labs** by reading starter code, identifying TODOs, and implementing solutions
 * **Reference diagrams** when stuck on architecture questions

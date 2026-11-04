@@ -41,7 +41,7 @@ Each course follows this pattern:
 ```
 course-NN-name/
 ├── syllabus.md              ← Read this first for course goals
-├── lectures/                ← Theoretical foundations (where provided)
+├── lectures/                ← Written lectures, linked from the syllabus
 │   └── lecture-*.md
 ├── case-studies/            ← Real production examples
 ├── labs/                    ← Hands-on exercises
@@ -58,7 +58,7 @@ course-NN-name/
    - Check prerequisites
    - Estimate time commitment
 
-2. **Study Lectures** (where available) (2-3 hours)
+2. **Study Lectures** (2-3 hours)
    - Take notes on key concepts
    - Look up unfamiliar terms in [Glossary](GLOSSARY.md)
    - Pause and reflect on each topic

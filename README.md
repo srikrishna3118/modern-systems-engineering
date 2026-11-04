@@ -43,13 +43,17 @@ Netflix, Uber, Airbnb, AWS, Kafka, Google Spanner, YouTube, WhatsApp, Cloudflare
 
 ## Quick Navigation
 
-**🎓 Lectures** (where available)
-* [Engineering Fundamentals](course-01-engineering-foundations/lectures/lecture-01-engineering-fundamentals.md)
-* [Building Scalable Systems](course-01-engineering-foundations/lectures/lecture-02-building-scalable-systems.md)
-* [Distributed Systems Fundamentals](course-02-distributed-systems/lectures/lecture-01-distributed-fundamentals.md)
+**🎓 Lectures** (every course)
+* Course 01: [Engineering Fundamentals](course-01-engineering-foundations/lectures/lecture-01-engineering-fundamentals.md), [Building Scalable Systems](course-01-engineering-foundations/lectures/lecture-02-building-scalable-systems.md)
+* Course 02: [Distributed Fundamentals](course-02-distributed-systems/lectures/lecture-01-distributed-fundamentals.md), [Event-Driven Systems](course-02-distributed-systems/lectures/lecture-02-event-driven-systems.md), [Partitioning and Fault Tolerance](course-02-distributed-systems/lectures/lecture-03-partitioning-and-fault-tolerance.md)
+* Course 03: [Cloud, Networking, and Security](course-03-cloud-infrastructure/lectures/lecture-01-cloud-networking-security.md), [IaC, Kubernetes, Serverless, and Cost](course-03-cloud-infrastructure/lectures/lecture-02-iac-kubernetes-serverless-finops.md)
+* Course 04: [ML Systems, Data, and Training](course-04-ai-systems/lectures/lecture-01-ml-systems-data-training.md), [Serving, MLOps, and Monitoring](course-04-ai-systems/lectures/lecture-02-serving-mlops-monitoring.md)
+* Course 05: [Events, Streams, and Windows](course-05-realtime-systems/lectures/lecture-01-events-streams-windows.md), [WebSockets, Latency, and Backpressure](course-05-realtime-systems/lectures/lecture-02-websockets-latency-backpressure.md)
+* Course 06: [Payments and Idempotency](course-06-financial-systems/lectures/lecture-01-payments-idempotency-availability.md), [Compliance, Fraud, and Audit](course-06-financial-systems/lectures/lecture-02-compliance-fraud-audit.md)
+* Course 07: [Scale](course-07-advanced-system-design/lectures/lecture-01-designing-for-scale.md), [Multi-region](course-07-advanced-system-design/lectures/lecture-02-global-multi-region.md), [Databases](course-07-advanced-system-design/lectures/lecture-03-database-selection.md), [Rate limiting](course-07-advanced-system-design/lectures/lecture-04-rate-limiting.md), [Zero trust](course-07-advanced-system-design/lectures/lecture-05-security-zero-trust.md), [Interview communication](course-07-advanced-system-design/lectures/lecture-06-system-design-interviews.md)
 
-**💼 Case Studies** (Learn from 20+ production systems)
-* [All Case Studies →](case-studies/)
+**💼 Case Studies** (production systems; index in [case-studies/README.md](case-studies/README.md))
+* [All Case Studies →](case-studies/README.md)
 * **Messaging Systems**: [WhatsApp](case-studies/whatsapp-messaging-system.md), [Slack](case-studies/slack-message-queue.md), [Discord](case-studies/discord-chat-infrastructure.md)
 * **Search & Discovery**: [Uber](case-studies/uber-dispatch-system.md), [Airbnb](case-studies/airbnb-search-platform.md), [Pinterest](case-studies/pinterest-feed-ranking.md), [GitHub](case-studies/github-code-search.md)
 * **Streaming & Media**: [Netflix](case-studies/netflix-streaming-architecture.md), [YouTube](case-studies/youtube-video-delivery.md), [Figma](case-studies/figma-realtime-collaboration.md)
@@ -122,7 +126,9 @@ modern-systems-engineering/
 ├── course-02-distributed-systems/
 │   ├── syllabus.md
 │   ├── lectures/
-│   │   └── lecture-01-distributed-fundamentals.md
+│   │   ├── lecture-01-distributed-fundamentals.md
+│   │   ├── lecture-02-event-driven-systems.md
+│   │   └── lecture-03-partitioning-and-fault-tolerance.md
 │   ├── labs/
 │   │   ├── chat-system/          (gRPC, bidirectional streaming)
 │   │   └── kafka-pipeline/       (events, analytics aggregation)
@@ -130,32 +136,38 @@ modern-systems-engineering/
 │
 ├── course-03-cloud-infrastructure/
 │   ├── syllabus.md
+│   ├── lectures/
 │   ├── labs/
 │   │   └── kubernetes-deployment/  (Docker, K8s manifests, health probes)
 │   └── case-studies/
 │
 ├── course-04-ai-systems/
 │   ├── syllabus.md
+│   ├── lectures/
 │   ├── labs/
 │   │   └── rag-ai-assistant/    (embeddings, vector DB, LLM)
 │   └── case-studies/
 │
 ├── course-05-realtime-systems/
 │   ├── syllabus.md
+│   ├── lectures/
 │   ├── labs/
 │   │   └── websocket-streaming/  (pub/sub, backpressure)
 │   └── case-studies/
 │
 ├── course-06-financial-systems/
 │   ├── syllabus.md
+│   ├── lectures/
 │   ├── labs/
 │   │   └── payment-ledger/      (double-entry, idempotency)
 │   └── case-studies/
 │
 ├── course-07-advanced-system-design/
 │   ├── syllabus.md
+│   ├── lectures/                       (one lecture per syllabus topic)
 │   ├── exercises/
-│   │   └── system-design-exercises.md  (URL shortener, rate limiter, search, etc.)
+│   │   ├── system-design-exercises.md  (index)
+│   │   └── 01-url-shortener.md … 05-video-streaming.md
 │   └── case-studies/
 │
 └── capstone-project/
@@ -190,7 +202,7 @@ After completing this curriculum, you will be able to:
 
 ### 👥 For Self-Study
 1. **Start**: Read [curriculum-roadmap.md](curriculum-roadmap.md) and pick a course
-2. **Learn the theory**: Read the lecture notes (where available) and case studies for that course
+2. **Learn the theory**: Read the lectures linked from that course's syllabus, then the case studies
 3. **Get hands-on**: Complete the lab with starter code (try it yourself first!)
 4. **Reference solution**: Compare your solution with the provided one
 5. **Reinforce**: Study the case study architectures related to that course
@@ -221,8 +233,8 @@ After completing this curriculum, you will be able to:
 
 * **20+ Production Case Studies** — Real systems from Netflix, Uber, Stripe, GitHub, Discord, etc.
 * **8 Hands-On Labs** — Progressive difficulty with starter code and complete solutions
-* **3 Lecture Series** — Foundations, scalability, and distributed systems theory
-* **System Design Exercises** — Interview-style problems with detailed solutions
+* **Lectures for all 7 courses** — one file per major topic, in the same notes style throughout
+* **System Design Exercises** — 5 interview-style problems with worked solutions (estimates, mermaid diagrams, trade-offs)
 * **4 Capstone Templates** — Complete architectures you can build
 * **Architecture Reference Guide** — 12 common patterns with ASCII diagrams
 * **Code Examples** — Python, Go, SQL, YAML for cloud-native development
@@ -243,8 +255,8 @@ After completing this curriculum, you will be able to:
 ## What's New (Recent Additions)
 
 ✨ **20+ Case Studies** — Real production architectures from leading companies
-✨ **Labs** — 8 hands-on labs with starter code + reference solutions (where available)
-✨ **Lecture Notes** — Detailed lecture sets covering fundamentals, scalability, and distributed systems
-✨ **System Design Exercises** — 5 interview-style problems with comprehensive solutions
+✨ **Labs** — 8 hands-on labs with starter code and reference solutions, each with a run path in its README
+✨ **Lecture Notes** — Written lectures for every course, including all six Course 07 topics
+✨ **System Design Exercises** — 5 interview-style problems with worked solutions in `course-07-advanced-system-design/exercises/`
 ✨ **4 Capstone Templates** — Production-ready architecture templates across 4 domains
 ✨ **Architecture Diagrams Guide** — 12 patterns with ASCII diagrams for quick reference
