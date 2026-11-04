@@ -55,4 +55,24 @@ Data Source --> Kafka Producer --> Kafka Topic --> Stream Processor --> Consumer
 - A short document describing your partition strategy and consumer group design.
 
 ## Solution
-See the `solution/` directory for a reference implementation.
+
+The reference pipeline is in `solution/`.
+
+Without Docker, an in-process broker checks partitioning and the consumer-group fold:
+
+```bash
+cd solution
+python run_local.py
+```
+
+With Docker, the same producer and consumer talk to Kafka:
+
+```bash
+cd solution
+docker compose up -d
+pip install -r requirements.txt
+MAX_EVENTS=50 python producer.py
+MAX_EVENTS=50 python consumer.py
+```
+
+`PARTITION_KEY=product_id` changes which events share an order. Two `consumer.py` processes with the same `KAFKA_GROUP` split the four partitions.

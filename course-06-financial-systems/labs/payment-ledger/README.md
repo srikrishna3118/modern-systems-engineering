@@ -40,8 +40,9 @@ API Client --> Payment API --> Ledger Service --> PostgreSQL (double-entry ledge
    ```
 4. Create a test transaction:
    ```bash
-   curl -X POST http://localhost:8000/transactions \
+   curl -s -X POST http://localhost:8000/transactions \
      -H "Idempotency-Key: test-001" \
+     -H 'Content-Type: application/json' \
      -d '{"from": "account_a", "to": "account_b", "amount": 100}'
    ```
 
@@ -69,5 +70,14 @@ Send the same transaction concurrently (e.g. two terminals) with the same idempo
 - An audit log showing all transaction records.
 
 ## Solution
-See the `solution/` directory for a reference implementation.
+
+```bash
+cd solution
+pip install -r requirements.txt
+python smoke_test.py
+```
+
+`GET /audit` returns the append-only transfer log. Replaying a request with the same `Idempotency-Key` returns the original transaction and does not add entries. The smoke test checks both, and checks that the two account balances sum to zero.
+
+`docker compose` is not used here. SQLite is the store, created by `init_db.py`.
 

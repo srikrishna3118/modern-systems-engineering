@@ -45,4 +45,10 @@ Tune backoff and breaker thresholds.
 2. Change `failure_threshold` (breaker trips sooner/later) and compare success rate vs latency.
 
 ## Solution
-See `../solution/` for a reference implementation.
+
+```bash
+cd ../solution
+python simulate.py
+```
+
+The reference script prints baseline, retry, and circuit-breaker runs. No extra packages are required.

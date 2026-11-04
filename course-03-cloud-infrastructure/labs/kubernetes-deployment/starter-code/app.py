@@ -18,6 +18,16 @@ APP_VERSION = os.getenv("APP_VERSION", "1.0")
 ENVIRONMENT = os.getenv("ENVIRONMENT", "development")
 
 
+@app.route("/", methods=["GET"])
+def index():
+    """Human-facing root used by the lab's curl check."""
+    return jsonify({
+        "app": "weather-service",
+        "status": "ok",
+        "version": APP_VERSION,
+    }), 200
+
+
 @app.route("/health", methods=["GET"])
 def health():
     """Liveness probe endpoint. Returns 200 if healthy."""

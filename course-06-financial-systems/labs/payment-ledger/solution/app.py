@@ -6,7 +6,7 @@ from fastapi import FastAPI, Header, HTTPException
 from pydantic import BaseModel, Field
 
 from db import connect
-from ledger import create_transfer, get_balance
+from ledger import create_transfer, get_balance, list_audit
 
 
 DB_PATH = os.getenv("LEDGER_DB", "ledger.db")
@@ -48,6 +48,16 @@ def post_transaction(
         "amount": tx.amount,
         "created_at": tx.created_at,
     }
+
+
+@app.get("/audit")
+def get_audit(limit: int = 50):
+    conn = connect(DB_PATH)
+    try:
+        rows = list_audit(conn, limit=limit)
+    finally:
+        conn.close()
+    return {"events": rows}
 
 
 @app.get("/accounts/{account}/balance")

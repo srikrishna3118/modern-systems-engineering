@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Stock Prices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .controls {
+            margin: 20px 0;
+        }
+        input {
+            padding: 8px;
+            font-size: 14px;
+            width: 100px;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 0 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #price-list {
+            margin-top: 20px;
+            border-top: 2px solid #ddd;
+            padding-top: 20px;
+        }
+        .price-item {
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+            border-left: 4px solid #007bff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .status.error {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Real-Time Stock Prices</h1>
+        
+        <div class="controls">
+            <input type="text" id="channel-input" placeholder="e.g., AAPL" value="AAPL">
+            <button onclick="subscribe()">Subscribe</button>
+            <button onclick="unsubscribe()">Unsubscribe</button>
+        </div>
+
+        <div id="status" class="status">Disconnected</div>
+        
+        <div id="price-list"></div>
+    </div>
+
+    <script>
+        let ws = null;
+        let subscribed_channels = new Set();
+
+        function connect() {
+            ws = new WebSocket('ws://localhost:8765');
+            
+            ws.onopen = function() {
+                console.log('Connected to server');
+                document.getElementById('status').textContent = '✓ Connected';
+                document.getElementById('status').className = 'status';
+            };
+
+            ws.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                displayPrice(data);
+            };
+
+            ws.onerror = function(error) {
+                console.error('WebSocket error:', error);
+                document.getElementById('status').textContent = '✗ Error: ' + error;
+                document.getElementById('status').className = 'status error';
+            };
+
+            ws.onclose = function() {
+                console.log('Disconnected from server');
+                document.getElementById('status').textContent = 'Disconnected';
+                document.getElementById('status').className = 'status error';
+            };
+        }
+
+        function subscribe() {
+            const channel = document.getElementById('channel-input').value.trim().toUpperCase();
+            if (!channel) {
+                alert('Enter a stock symbol');
+                return;
+            }
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({
+                    action: 'subscribe',
+                    channel: channel
+                }));
+                subscribed_channels.add(channel);
+                console.log('Subscribed to', channel);
+            }
+        }
+
+        function unsubscribe() {
+            const channel = document.getElementById('channel-input').value.trim().toUpperCase();
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({
+                    action: 'unsubscribe',
+                    channel: channel
+                }));
+                subscribed_channels.delete(channel);
+                console.log('Unsubscribed from', channel);
+            }
+        }
+
+        function displayPrice(data) {
+            const priceList = document.getElementById('price-list');
+            const id = `price-${data.stock}`;
+            let item = document.getElementById(id);
+
+            if (!item) {
+                item = document.createElement('div');
+                item.id = id;
+                item.className = 'price-item';
+                priceList.appendChild(item);
+            }
+
+            const timestamp = new Date(data.timestamp).toLocaleTimeString();
+            item.innerHTML = `
+                <span><strong>${data.stock}</strong></span>
+                <span>$${data.price.toFixed(2)}</span>
+                <span style="color: #999; font-size: 12px;">${timestamp}</span>
+            `;
+        }
+
+        // Connect on page load
+        window.onload = function() {
+            connect();
+        };
+    </script>
+</body>
+</html>
